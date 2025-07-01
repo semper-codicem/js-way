@@ -1,0 +1,5 @@
+- [About Home](/about/)
+- [Team](/about/team)
+- [Contributing](/about/contributing)
+- [License](/about/license)
+- [Changelog](/about/changelog)

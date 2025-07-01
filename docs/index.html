@@ -27,31 +27,23 @@
       margin: 8px;
       border: #f4f4f4 1px solid;
     }
-    .toc-nav {
-      background-color: #f4f4f4;
-      padding: 10px;
-      max-height: 100vh;
-      overflow-y: auto;
-    }
+    
   </style>
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: 'CPP',
-      repo: 'https://semper-codicem.github.io/cpp/',
+      name: 'Documentation',
+      repo: 'https://github.com/your-repo/js-way',
       loadSidebar: true,
-      maxLevel: 1,
-      subMaxLevel: 0,
+      loadNavbar: true,
+      mergeNavbar: true,
+      maxLevel: 4,
+      subMaxLevel: 3,
       auto2top: true,
       pagination: {
         crossChapter: true
-      },
-      toc: {
-       tocMaxLevel: 2,
-       target: 'h1, h2, h3, h4, h5, h6',
-       title: 'Table of Contents',
       },
       // Accessibility plugins
       plugins: [
