@@ -104,62 +104,62 @@
         },
         
         // Google AdSense Plugin
-        function(hook, vm) {
-          // Add header ad
-          hook.beforeEach(function(content) {
-            const headerAd = `
-              <div class="adsense-container adsense-header">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
-                     data-ad-slot="XXXXXXXXX"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-              </div>
-            `;
-            return headerAd + content;
-          });
+        // function(hook, vm) {
+        //   // Add header ad
+        //   hook.beforeEach(function(content) {
+        //     const headerAd = `
+        //       <div class="adsense-container adsense-header">
+        //         <ins class="adsbygoogle"
+        //              style="display:block"
+        //              data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+        //              data-ad-slot="XXXXXXXXX"
+        //              data-ad-format="auto"
+        //              data-full-width-responsive="true"></ins>
+        //       </div>
+        //     `;
+        //     return headerAd + content;
+        //   });
           
-          // Add content ads
-          hook.beforeEach(function(content) {
-            // Add ad after first heading
-            const contentWithAds = content.replace(
-              /(^# .+?)(\n\n)/m,
-              `$1$2
-              <div class="adsense-container">
-                <ins class="adsbygoogle"
-                     style="display:block; text-align:center;"
-                     data-ad-layout="in-article"
-                     data-ad-format="fluid"
-                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
-                     data-ad-slot="XXXXXXXXX"></ins>
-              </div>
-              `
-            );
-            return contentWithAds;
-          });
+        //   // Add content ads
+        //   hook.beforeEach(function(content) {
+        //     // Add ad after first heading
+        //     const contentWithAds = content.replace(
+        //       /(^# .+?)(\n\n)/m,
+        //       `$1$2
+        //       <div class="adsense-container">
+        //         <ins class="adsbygoogle"
+        //              style="display:block; text-align:center;"
+        //              data-ad-layout="in-article"
+        //              data-ad-format="fluid"
+        //              data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+        //              data-ad-slot="XXXXXXXXX"></ins>
+        //       </div>
+        //       `
+        //     );
+        //     return contentWithAds;
+        //   });
           
-          // Initialize ads after content loads
-          hook.doneEach(function() {
-            // Wait a moment for DOM to settle
-            setTimeout(function() {
-              try {
-                // Initialize AdSense ads
-                (window.adsbygoogle = window.adsbygoogle || []).push({});
+        //   // Initialize ads after content loads
+        //   hook.doneEach(function() {
+        //     // Wait a moment for DOM to settle
+        //     setTimeout(function() {
+        //       try {
+        //         // Initialize AdSense ads
+        //         (window.adsbygoogle = window.adsbygoogle || []).push({});
                 
-                // Re-initialize ads for SPA navigation
-                const ads = document.querySelectorAll('.adsbygoogle');
-                ads.forEach(function(ad) {
-                  if (!ad.hasAttribute('data-adsbygoogle-status')) {
-                    (window.adsbygoogle = window.adsbygoogle || []).push({});
-                  }
-                });
-              } catch (e) {
-                console.warn('AdSense initialization error:', e);
-              }
-            }, 100);
-          });
-        }
+        //         // Re-initialize ads for SPA navigation
+        //         const ads = document.querySelectorAll('.adsbygoogle');
+        //         ads.forEach(function(ad) {
+        //           if (!ad.hasAttribute('data-adsbygoogle-status')) {
+        //             (window.adsbygoogle = window.adsbygoogle || []).push({});
+        //           }
+        //         });
+        //       } catch (e) {
+        //         console.warn('AdSense initialization error:', e);
+        //       }
+        //     }, 100);
+        //   });
+        // }
       ]
     }
 
