@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentation</title>
+  <meta name="description" content="Documentation description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/light.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #ffffff;
+    }
+    .sidebar {
+      background-color: #f4f4f4;
+      padding: 10px;
+    }
+    .content {
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    .markdown-section {
+      margin: 8px;
+      border: #f4f4f4 1px solid;
+    }
+    .toc-nav {
+      background-color: #f4f4f4;
+      padding: 10px;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'CPP',
+      repo: 'https://semper-codicem.github.io/cpp/',
+      loadSidebar: true,
+      maxLevel: 1,
+      subMaxLevel: 0,
+      auto2top: true,
+      pagination: {
+        crossChapter: true
+      },
+      toc: {
+       tocMaxLevel: 2,
+       target: 'h1, h2, h3, h4, h5, h6',
+       title: 'Table of Contents',
+      },
+      // Accessibility plugins
+      plugins: [
+        function(hook) {
+          hook.doneEach(function() {
+            // Add role="navigation" to sidebar
+            document.querySelector('.sidebar').setAttribute('role', 'navigation');
+            // Add role="main" to main content
+            document.querySelector('.content').setAttribute('role', 'main');
+          });
+        }
+      ]
+    }
+
+    window.$docsify.plugins = [].concat(
+      window.$docsify.plugins || [],
+      function (hook, vm) {
+
+        hook.doneEach(function () {
+          console.log('All content processed for accessibility enhancements');
+          const hash = document.location.hash.replace('#/', '');
+          const scriptSource = `js/pages/${hash}.js`;
+
+          // Remove any previously added page script
+          const oldScript = document.getElementById('page-script');
+          if (oldScript) oldScript.remove();
+
+          // Check if the JS file exists before adding
+          fetch(scriptSource, { method: 'HEAD' })
+            .then(response => {
+              if (response.ok) {
+                const pageScript = document.createElement('script');
+                pageScript.id = 'page-script';
+                pageScript.setAttribute('src', scriptSource);
+                pageScript.defer = true;
+                document.body.appendChild(pageScript);
+              } else {
+                console.warn('Page script not found:', scriptSource);
+              }
+            })
+            .catch(error => {
+              console.error('Error checking page script:', error);
+            });
+        });
+      }
+    );
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/docsify-plugin-toc.min.js"></script>
+</body>
+</html>
