@@ -4,6 +4,7 @@ export default defineConfig({
   title: 'JS Way',
   description: 'JavaScript learning path documentation',
   lang: 'en-US',
+  base: '/js-way/',
   
   head: [
     // Google AdSense
