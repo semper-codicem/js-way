@@ -27,6 +27,6 @@ npm start
 
 Once you have everything set up, check out:
 
-- [Installation Guide](/guide/installation) for detailed setup instructions
-- [Configuration](/guide/configuration) to customize your setup
+- [Documentation](/guide/index) for more details
+- [API Reference](/api/index) to understand available features
 - [API Reference](/api/) to understand available features

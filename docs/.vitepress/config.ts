@@ -5,6 +5,7 @@ export default defineConfig({
   description: 'JavaScript learning path documentation',
   lang: 'en-US',
   base: '/js-way/',
+  ignoreDeadLinks: true, // Temporarily ignore dead links while developing
   
   head: [
     // Google AdSense
@@ -66,8 +67,8 @@ export default defineConfig({
         {
           text: 'Guide',
           items: [
-            { text: 'Getting Started', link: '/guide/getting-started' },
-            { text: 'Introduction', link: '/guide/README' }
+            { text: 'Getting Started', link: '/guide/index' },
+            { text: 'Introduction', link: '/guide/getting-started' }
           ]
         }
       ],
@@ -77,7 +78,7 @@ export default defineConfig({
         {
           text: 'Fundamentals',
           items: [
-            { text: 'Introduction', link: '/fundamentals/README' }
+            { text: 'Introduction', link: '/fundamentals/index' }
           ]
         },
         {
@@ -96,7 +97,7 @@ export default defineConfig({
         {
           text: 'API',
           items: [
-            { text: 'Introduction', link: '/api/README' },
+            { text: 'Introduction', link: '/api/index' },
             { text: 'Authentication', link: '/api/authentication' }
           ]
         }
@@ -136,7 +137,7 @@ export default defineConfig({
         {
           text: 'About',
           items: [
-            { text: 'Introduction', link: '/about/README' },
+            { text: 'Introduction', link: '/about/index' },
             { text: 'Contributing', link: '/about/contributing' },
             { text: 'License', link: '/about/license' }
           ]

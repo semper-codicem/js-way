@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./chunks/framework.9K5fzrVi.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"tools/vscode.md","filePath":"tools/vscode.md"}'),s={name:"tools/vscode.md"};function a(c,r,n,d,p,_){return o(),t("div")}const m=e(s,[["render",a]]);export{l as __pageData,m as default};
