@@ -1,5 +1,0 @@
-- [API Home](/api/)
-- [Authentication](/api/authentication)
-- [Endpoints](/api/endpoints)
-- [Examples](/api/examples)
-- [Error Handling](/api/error-handling)
