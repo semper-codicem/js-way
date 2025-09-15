@@ -1,3 +1,8 @@
+---
+title: Getting Started
+description: Begin your journey with JavaScript, from basics to advanced concepts
+---
+
 # Introduction to JavaScript: From Beginner to Advanced
 
 JavaScript is a versatile programming language that powers the dynamic behavior of most websites and web applications. Whether you are just starting your coding journey or looking to deepen your expertise, mastering JavaScript opens doors to front-end, back-end, and even mobile development.

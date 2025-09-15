@@ -1,3 +1,4 @@
 - [What To Learn](/fundamentals/basics/what_to_learn.md)
 - [Introduction](/fundamentals/basics/introduction.md)
 - [Syntax And Structure](/fundamentals/basics/syntax_and_structure.md)
+- [Variables](/fundamentals/basics/variables.md)
